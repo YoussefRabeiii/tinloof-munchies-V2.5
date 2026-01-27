@@ -21,7 +21,10 @@ export default async function CheckoutPage(
   const cart = await getCart();
 
   if (!cart || (cart.items?.length || 0) === 0) {
-    return redirect(`/${countryCode}/`);
+    // return redirect(`/${countryCode}/`);
+    console.log({cart, countryCode, params});
+    
+    return
   }
 
   if (cart?.items?.length) {

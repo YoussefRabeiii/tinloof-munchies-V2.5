@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "build": "medusa build",
+    "postbuild": "node -e \"const fs=require('fs'),path=require('path');const src=path.join(process.cwd(),'.medusa/server/public/admin');const dest=path.join(process.cwd(),'public/admin');if(fs.existsSync(src)){if(fs.existsSync(dest))fs.rmSync(dest,{recursive:true,force:true});fs.mkdirSync(path.dirname(dest),{recursive:true});fs.cpSync(src,dest,{recursive:true});}\"",
     "seed": "medusa exec ./src/scripts/seed.ts",
     "start": "medusa start",
     "dev": "medusa develop",

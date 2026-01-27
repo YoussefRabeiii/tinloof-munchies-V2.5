@@ -17,7 +17,9 @@ export default defineConfig({
   icon: StudioLogo,
   plugins: [
     pages({
-      allowOrigins: isDev ? ["http://localhost:3000"] : undefined,
+      allowOrigins: isDev
+  ? ["http://localhost:3000", "http://localhost:3333"]
+  : undefined,
       previewUrl: {
         origin: isDev ? "http://localhost:3000" : undefined,
         previewMode: {
